@@ -13,7 +13,10 @@ public class CreatePoi : MonoBehaviour
     [SerializeField]
     private Transform rangeB;   // 生成範囲（右下）
 
-    public float time;
+    public float deltaTime;     // 経過時間
+    public float createTime;    // 生成時間（createTime秒後に生成する）
+    public int nowCreateCount;  // 現在の生成個数
+    public int maxCreateCount;  // 最大生成個数
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +28,7 @@ public class CreatePoi : MonoBehaviour
     void Update()
     {
         // 時間を加算
-        time += Time.deltaTime;
+        deltaTime += Time.deltaTime;
 
         // rangeAとrangeBのx座標の範囲内でランダムな値を作成
         float x = Random.Range(rangeA.position.x, rangeB.position.x);
@@ -34,19 +37,24 @@ public class CreatePoi : MonoBehaviour
         // rangeAとrangeBのz座標の範囲内でランダムな値を作成
         float z = Random.Range(rangeA.position.z, rangeB.position.z);
 
-        // 三秒ごとに生成
-        if (time > 3.0f)
+        // 生成個数が最大値を超えていないとき
+        if(nowCreateCount < maxCreateCount)
         {
-            // オブジェクトを生成
-            Instantiate(createObj, new Vector3(x, y, z), createObj.transform.rotation);
+            // 三秒ごとに生成
+            if (deltaTime > createTime)
+            {
+                // オブジェクトを生成
+                Instantiate(createObj, new Vector3(x, y, z), createObj.transform.rotation);
 
-            time = 0.0f;
+                // 経過時間を０にして生成数を加算
+                deltaTime = 0.0f;
+                nowCreateCount++;
+            }
         }
-
-        // オブジェクトを生成
-        //Instantiate(createObj, new Vector3(x, y, z), createObj.transform.rotation);
-
-        // 時間をリセット
-        //time = 0.0f;
+        else
+        {
+            // 計測終了
+            deltaTime = 0.0f;
+        }
     }
 }
