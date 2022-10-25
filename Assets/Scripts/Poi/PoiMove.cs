@@ -5,6 +5,7 @@ using UnityEngine;
 public class PoiMove : MonoBehaviour
 {
     //Animatorをanimという変数で定義する
+    [SerializeField]
     private Animator anim;
     private float mTime;
     private float mScoopTime;
@@ -15,9 +16,9 @@ public class PoiMove : MonoBehaviour
     void Start()
     {
         //変数animに、Animatorコンポーネントを設定する
-        anim = gameObject.GetComponent<Animator>();
+        anim = anim.GetComponent<Animator>();
         mTime = 0.0f;
-        mScoopTime = 15.0f;
+        mScoopTime = 5.0f;
     }
 
     /// <summary>
@@ -32,7 +33,7 @@ public class PoiMove : MonoBehaviour
             // Bool型のパラメーターをTrueにする
             anim.SetBool("scoop", true);
             mTime = 0.0f;
-            mScoopTime -= 1;
+            //mScoopTime -= 1;
         }
         else
         {
