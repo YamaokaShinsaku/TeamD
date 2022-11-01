@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class Chase : MonoBehaviour
 {
     // プレイヤー
-    private GameObject[] Players;
+    public GameObject[] Players;
     // NavMeshAgent
     private NavMeshAgent agent;
     // 追う対象を格納
-    private Transform target;
-    // ポイが上昇するカウント
-    // private float UpCount;
+    public Transform target;
+
+    public poiColor mPoiColor;
 
 
     // Use this for initialization
@@ -23,10 +23,11 @@ public class Chase : MonoBehaviour
         Players = GameObject.FindGameObjectsWithTag("Player");
         // ターゲットをランダムで選ぶ
         target = Players[Random.Range(0, Players.Length)].transform;
+        mPoiColor.ColorUpdate(target, Players[0], Players[1]);
     }
 
     // Update is called once per frame
-    void Update()
+    public void ChaseUpdate()
     {
         //Count += Time.deltaTime;
         //Debug.Log(UpCount);
@@ -50,5 +51,6 @@ public class Chase : MonoBehaviour
             // ターゲットをランダムで変更する
             target = Players[Random.Range(0, Players.Length)].transform;
         }
+        mPoiColor.ColorUpdate(target, Players[0], Players[1]);
     }
 }

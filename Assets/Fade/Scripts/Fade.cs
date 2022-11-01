@@ -47,9 +47,9 @@ public class Fade : MonoBehaviour
 		fade.Range = cutoutRange;
 	}
 
-	IEnumerator FadeoutCoroutine(float time, System.Action action)
+	IEnumerator FadeinCoroutine(float time, System.Action action)
 	{
-		float endTime = Time.timeSinceLevelLoad + time * (cutoutRange);
+		float endTime = Time.timeSinceLevelLoad + time * (1 - cutoutRange);
 
 		var endFrame = new WaitForEndOfFrame();
 
@@ -68,7 +68,7 @@ public class Fade : MonoBehaviour
 		}
 	}
 
-	IEnumerator FadeinCoroutine(float time, System.Action action)
+	IEnumerator FadeoutCoroutine(float time, System.Action action)
 	{
 		float endTime = Time.timeSinceLevelLoad + time * (1 - cutoutRange);
 

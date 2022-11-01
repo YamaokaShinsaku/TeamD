@@ -21,7 +21,7 @@ public partial class Player
             if (!isDash)
             {
                 // ダッシュ条件を満たしている
-                if (Input.GetKey(owner.dashKey) && owner.isGround && owner.stamina > owner.subStamina)
+                if ((Input.GetKey(owner.dashKey) || Input.GetButton("Dash" + owner.playerNumber)) && owner.isGround && owner.stamina > owner.subStamina)
                 {
                     // コストを支払ったら
                     owner.stamina -= owner.subStamina;
@@ -35,7 +35,7 @@ public partial class Player
                     StaminaDown.GetComponent<playerStamina>().StaminaDown(0.5f, owner.GetComponent<Player>().GetPlayerNumber());
                 }
                 // 満たしてない
-                else if(!Input.GetKey(owner.dashKey) || !owner.isGround || owner.stamina <= owner.subStamina)
+                else if(!(Input.GetKey(owner.dashKey) || Input.GetButton("Dash" + owner.playerNumber)) || !owner.isGround || owner.stamina <= owner.subStamina)
                 {
                     // ダッシュ攻撃処理を終了する
                     owner.dashColl.enabled = false;

@@ -25,11 +25,11 @@ public partial class Player
     // Update()‚æ‚èŽÀs
     private void OnUpdate()
     {
-        if (Input.GetKeyDown(jumpKey) && isGround && stamina > subStamina)
+        if ((Input.GetKeyDown(jumpKey) || Input.GetButtonDown("Jump" + playerNumber)) && isGround && stamina > subStamina)
         {
             ChangeState(jump);
         }
-        else if(Input.GetKeyDown(SpinKey))
+        else if(Input.GetKeyDown(SpinKey) || Input.GetButtonDown("Fire" + playerNumber))
         {
             ChangeState(spin);
         }

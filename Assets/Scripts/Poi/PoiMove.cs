@@ -24,7 +24,7 @@ public class PoiMove : MonoBehaviour
     /// <summary>
     /// XV
     /// </summary>
-    void Update()
+    public void MoveUpdate()
     {
         mTime += Time.deltaTime;
         // ŠÔŒo‰ß‚µ‚½‚ç

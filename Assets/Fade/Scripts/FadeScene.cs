@@ -12,17 +12,18 @@ public class FadeScene : MonoBehaviour
 
 	public void Fadeout()
 	{
-
-        //fade.FadeIn(1, () =>
-        //{
-
-        //    fade.FadeOut(1);
-
-        //});
-
-        fade.FadeIn(1, () => {
+        fade.FadeOut(1, () => {
 
 			Invoke("LoadScene", 0.5f);
+		});
+	}
+
+	public void FadeIn()
+	{
+
+		fade.FadeIn(1, () => {
+
+			//Invoke("LoadScene", 0.5f);
 		});
 	}
 

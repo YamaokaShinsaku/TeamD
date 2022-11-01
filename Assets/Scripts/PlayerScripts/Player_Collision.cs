@@ -21,5 +21,7 @@ public partial class Player
         {
                 mgr.AttackProc(this.gameObject, other.gameObject, PlayerMgr.AtkState.Spin);
         }
+
+        state = idol;
     }
 }

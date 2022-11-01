@@ -189,6 +189,8 @@ GameObject:
   - component: {fileID: 5270546851008592813}
   - component: {fileID: 5270546851008592817}
   - component: {fileID: 5270546851008592818}
+  - component: {fileID: -2742085542415917754}
+  - component: {fileID: 6900390960810705131}
   m_Layer: 0
   m_Name: poi1
   m_TagString: Untagged
@@ -253,6 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9946e3d678cf630418332995671ee63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Players: []
+  target: {fileID: 0}
 --- !u!195 &5270546851008592818
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -275,3 +279,32 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-2742085542415917754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036668969722105502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716160ef4e8ae704b92effa6a43e9cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mMove: {fileID: 0}
+  mChase: {fileID: 5270546851008592817}
+--- !u!114 &6900390960810705131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036668969722105502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb81bcc1d223644ac5aab458c06ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mPoi: {fileID: 1909278282080804190}
+  m1PColor: {fileID: 2100000, guid: 0fb4a70428830e24ab6d13461e3638a2, type: 2}
+  m2PColor: {fileID: 2100000, guid: 44ace8d7777d3ee4987734baac62276b, type: 2}
