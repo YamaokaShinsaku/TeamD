@@ -5,7 +5,7 @@ using UnityEngine;
 public class OkeMove : MonoBehaviour
 {
     [SerializeField]
-    public Transform target;
+    //public Transform target;
     public float speed;
 
     private int XZRand;
@@ -35,7 +35,7 @@ public class OkeMove : MonoBehaviour
 
         Vector3 pos = Point;
 
-        float test = Vector3.Distance(target.position, pos);
+        //float test = Vector3.Distance(target.position, pos);
         transform.LookAt(pos);
 
         //移動地点に着いたら移動地点をランダムに変更する

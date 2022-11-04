@@ -340,6 +340,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7786241730743107165, guid: 2433c6050e645324fa5ac1f9de84884b, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786241730743107165, guid: 2433c6050e645324fa5ac1f9de84884b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7786241730743107166, guid: 2433c6050e645324fa5ac1f9de84884b, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1579,9 +1587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fec1ff85b21b564ab5e8794f59d2fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minute: 0
-  seconds: 30
-  timeText: {fileID: 1628567531}
   ResultPanel: {fileID: 248838412}
   GameBGM: {fileID: 1226543934}
   ResultBGM: {fileID: 49918752}
@@ -2142,7 +2147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6777599e9822e149b2cc251473f6d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   speed: 15
 --- !u!1 &742036904
 GameObject:
@@ -3481,7 +3485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1628567531
 MonoBehaviour:
   m_ObjectHideFlags: 0
